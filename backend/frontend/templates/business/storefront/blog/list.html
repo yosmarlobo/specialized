@@ -1,0 +1,18 @@
+{% load static %}
+{% block content %}
+<div class="row" style="padding: 12px; margin-top: 12px;">
+  {% for object in object_list %}
+    <div class="card" style="width: 18rem; padding: 12px;">
+      <img src="{{ object.image.url }}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{ object.author }}</h5>
+        <p class="card-text">{{ object.description }}</p>
+        <a href="{% url 'storefront:detail' pk=object.pk %}" target="_blank" class="btn btn-primary">{{ object.name }}</a>
+        <a href="{% url 'storefront:create' %}" class="btn btn-primary">Crear blog</a>
+        <a href="{% url 'storefront:update' pk=object.pk %}" target="_blank" class="btn btn-primary">editar</a>
+        <a href="{% url 'storefront:delete' pk=object.pk %}" target="_blank" class="btn btn-danger">eliminar</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

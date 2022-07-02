@@ -1,0 +1,11 @@
+{% load static %}
+{% block content %}
+<div class="card mb-3">
+    <img src="{{ object.image.url }}"  class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{ object.name}}</h5>
+      <p class="card-text">{{ object.description}}</p>
+      <p class="card-text"><small class="text-muted">{{ object.author}}</small></p>
+    </div>
+  </div>
+{% endblock %}  
